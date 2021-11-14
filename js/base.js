@@ -8,20 +8,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 document.addEventListener('DOMContentLoaded', function () {
   'use strict';
-  /* function testWebP(callback) {
-  var webP = new Image();
-  webP.onload = webP.onerror = function () {
-  callback(webP.height == 2);
-  };
-  webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
-  }
-  testWebP(function (support) {
-  if (support == true) {
-  document.querySelector('body').classList.add('webp');
-  }else{
-  document.querySelector('body').classList.add('no-webp');
-  }
-  });*/
 
   feather.replace();
 
@@ -325,7 +311,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     /* Visitors chart */
 
-
     var ctx = document.getElementById('myChart');
 
     if (ctx) {
@@ -491,129 +476,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       customersChart.customers = myCustomersChart;
     }
-
-    /* Emissions chart */
-
-    var emissionsChartCtx = document.getElementById('dashboard-emissions-chart');
-
-    if (emissionsChartCtx) {
-      var myCanvas = emissionsChartCtx.getContext('2d');
-      var emissionsChart = new Chart(myCanvas, {
-        type: 'line',
-        data: {
-          labels: ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-          datasets: [{
-            label: 'Area 1',
-            data: getEmissions(1),
-            cubicInterpolationMode: 'monotone',
-            tension: 0.4,
-            backgroundColor: ['rgba(95, 46, 234, 1)'],
-            borderColor: ['rgba(95, 46, 234, 1)'],
-            borderWidth: 2
-          }, {
-            label: 'Area 2',
-            data: getEmissions(2),
-            cubicInterpolationMode: 'monotone',
-            tension: 0.4,
-            backgroundColor: ['rgb(227,234,130, 1)'],
-            borderColor: ['rgba(227,234,130, 1)'],
-            borderWidth: 2
-          }, {
-            label: 'Area 3',
-            data: getEmissions(3),
-            cubicInterpolationMode: 'monotone',
-            tension: 0.4,
-            backgroundColor: ['rgba(95, 146, 234, 1)'],
-            borderColor: ['rgba(95, 146, 234, 1)'],
-            borderWidth: 2
-          }, {
-            label: 'Area 4',
-            data: getEmissions(4),
-            cubicInterpolationMode: 'monotone',
-            tension: 0.4,
-            backgroundColor: ['rgba(95, 46, 134, 1)'],
-            borderColor: ['rgba(95, 46, 134, 1)'],
-            borderWidth: 2
-          }, {
-            label: 'Area 5',
-            data: getEmissions(5),
-            cubicInterpolationMode: 'monotone',
-            tension: 0.4,
-            backgroundColor: ['rgb(234,35,53, 1)'],
-            borderColor: ['rgba(234,35,53, 1)'],
-            borderWidth: 2
-          }, {
-            label: 'Area 6',
-            data: getEmissions(6),
-            cubicInterpolationMode: 'monotone',
-            tension: 0.4,
-            backgroundColor: ['rgba(75, 222, 151, 1)'],
-            borderColor: ['rgba(75, 222, 151, 1)'],
-            borderWidth: 2
-          }]
-        },
-        options: {
-          scales: {
-            y: {
-              min: 0,
-              max: 250,
-              ticks: {
-                stepSize: 25
-              },
-              grid: {
-                display: false
-              }
-            },
-            x: {
-              grid: {
-                color: gridLine
-              }
-            }
-          },
-          elements: {
-            point: {
-              radius: 2
-            }
-          },
-          plugins: {
-            legend: {
-              position: 'top',
-              align: 'end',
-              labels: {
-                boxWidth: 8,
-                boxHeight: 8,
-                usePointStyle: true,
-                font: {
-                  size: 12,
-                  weight: '500'
-                }
-              }
-            },
-            title: {
-              display: true,
-              text: ['Visitor statistics', 'Nov - July'],
-              align: 'start',
-              color: '#171717',
-              font: {
-                size: 16,
-                family: 'Inter',
-                weight: '600',
-                lineHeight: 1.4
-              }
-            }
-          },
-          tooltips: {
-            mode: 'index',
-            intersect: false
-          },
-          hover: {
-            mode: 'nearest',
-            intersect: true
-          }
-        }
-      });
-      charts.emissions = emissionsChart;
-    }
   })();
   /* Change data of all charts */
 
@@ -640,22 +502,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
   addData();
 });
-
-function getEmissions(area) {
-  return [
-      Math.floor(Math.random()*200),
-      Math.floor(Math.random()*200),
-      Math.floor(Math.random()*200),
-      Math.floor(Math.random()*200),
-      Math.floor(Math.random()*200),
-      Math.floor(Math.random()*200),
-      Math.floor(Math.random()*200),
-      Math.floor(Math.random()*200),
-      Math.floor(Math.random()*200),
-      Math.floor(Math.random()*200),
-      Math.floor(Math.random()*200),
-      Math.floor(Math.random()*200),
-      Math.floor(Math.random()*200),
-      Math.floor(Math.random()*200)
-  ];
-}

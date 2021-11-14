@@ -2905,6 +2905,16 @@ label {
   padding: 20px;
 }
 
+.chart #dashboard-emissions-chart {
+  max-height: 100% !important;
+  max-width: 100% !important;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 15px 50px rgba(160, 163, 189, 0.1);
+  box-shadow: 0px 15px 50px rgba(160, 163, 189, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+}
+
 .main {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -3367,6 +3377,12 @@ label {
 }
 
 .darkmode #myChart {
+  background-color: #222235;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.darkmode #dashboard-emissions-chart {
   background-color: #222235;
   -webkit-box-shadow: none;
   box-shadow: none;
