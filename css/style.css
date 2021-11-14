@@ -2905,7 +2905,7 @@ label {
   padding: 20px;
 }
 
-.chart #dashboard-emissions-chart {
+.chart [id^="dashboard-emissions"] {
   max-height: 100% !important;
   max-width: 100% !important;
   background-color: #fff;
@@ -3382,7 +3382,7 @@ label {
   box-shadow: none;
 }
 
-.darkmode #dashboard-emissions-chart {
+.darkmode [id^="dashboard-emissions"] {
   background-color: #222235;
   -webkit-box-shadow: none;
   box-shadow: none;
