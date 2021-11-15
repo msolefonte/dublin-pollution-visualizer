@@ -215,7 +215,8 @@ function updateEmissionsChart(labels, normalized_emissions, emissions, traffic) 
             tension: 0.4,
             backgroundColor: ['rgba(245, 230, 40, 1)'],
             borderColor: ['rgba(245, 230, 40, 1)'],
-            borderWidth: 2
+            borderWidth: 2,
+            spanGaps: false
         }]
     };
 
@@ -488,7 +489,7 @@ async function updateAllEmissionValues() {
             if (entry_date > one_week_from_then) {
                 chart_traffic_local.push(
                     {
-                        x: new Date(key).toISOString().substring(5, 16),
+                        x: new Date(key),
                         y: averaged_traffic[key][0] / averaged_traffic[key][1]
                     }
                 );
