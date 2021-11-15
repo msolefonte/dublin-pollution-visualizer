@@ -103,7 +103,7 @@ function updateEmissionsChart(labels, normalized_emissions, emissions, traffic) 
                 },
                 title: {
                     display: true,
-                    text: ['Emissions This Week'],
+                    text: ['Emissions this week (μg/m³)'],
                     align: 'start',
                     color: '#171717',
                     font: {
