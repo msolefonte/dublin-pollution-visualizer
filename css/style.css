@@ -2698,6 +2698,18 @@ label {
   margin-bottom: 6px;
 }
 
+.stat-cards-info__text {
+  font-size: 14px;
+  line-height: 1.22;
+  color: #b9b9b9;
+}
+
+.stat-cards-info__link {
+  font-size: 14px;
+  line-height: 1.22;
+  color: #0061F7;
+}
+
 .stat-cards-info__progress {
   display: -webkit-box;
   display: -ms-flexbox;
