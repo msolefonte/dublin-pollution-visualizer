@@ -1,6 +1,7 @@
 "use strict";
 
-var apiUrl = 'http://localhost:8080/v1/';
+// var apiUrl = 'http://localhost:8080/v1/';
+var apiUrl = 'http://13.80.18.173:8080/v1/';
 
 function updateTotalEmissions(thisMonth, previousMonth) {
     if (document.getElementById("dashboard-emissions-monthly")) {
