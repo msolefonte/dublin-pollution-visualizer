@@ -55,7 +55,7 @@ function updateColor(chart, firstCall) {
     chart.update();
 }
 
-function updateEmissionsChart(labels, emissions) {
+function updateEmissionsChart(labels, normalized_emissions, emissions, traffic) {
     const options = {
             spanGaps: 1000 * 60 * 60 * 24 * 2, // 2 days
             responsive: true,
@@ -80,17 +80,7 @@ function updateEmissionsChart(labels, emissions) {
                             }
                         }
                     }
-                }],
-                y: {
-                    min: -5,
-                    max: 150,
-                    ticks: {
-                        stepSize: 25
-                    },
-                    grid: {
-                        display: false
-                    }
-                }
+                }]
             },
             elements: {
                 point: {
@@ -138,7 +128,7 @@ function updateEmissionsChart(labels, emissions) {
         labels: labels,
         datasets: [{
             label: 'South Canal',
-            data: emissions[0],
+            data: normalized_emissions[0],
             cubicInterpolationMode: 'monotone',
             tension: 0.4,
             backgroundColor: ['rgba(95, 46, 234, 1)'],
@@ -146,7 +136,7 @@ function updateEmissionsChart(labels, emissions) {
             borderWidth: 2
         }, {
             label: 'The Liberties',
-            data: emissions[1],
+            data: normalized_emissions[1],
             cubicInterpolationMode: 'monotone',
             tension: 0.4,
             backgroundColor: ['rgb(227,234,130, 1)'],
@@ -154,7 +144,7 @@ function updateEmissionsChart(labels, emissions) {
             borderWidth: 2
         }, {
             label: 'Dublin Heuston',
-            data: emissions[2],
+            data: normalized_emissions[2],
             cubicInterpolationMode: 'monotone',
             tension: 0.4,
             backgroundColor: ['rgba(95, 146, 234, 1)'],
@@ -162,7 +152,7 @@ function updateEmissionsChart(labels, emissions) {
             borderWidth: 2
         }, {
             label: 'Tech. University',
-            data: emissions[3],
+            data: normalized_emissions[3],
             cubicInterpolationMode: 'monotone',
             tension: 0.4,
             backgroundColor: ['rgb(234,35,53, 1)'],
@@ -170,7 +160,7 @@ function updateEmissionsChart(labels, emissions) {
             borderWidth: 2
         }, {
             label: 'North City Center',
-            data: emissions[4],
+            data: normalized_emissions[4],
             cubicInterpolationMode: 'monotone',
             tension: 0.4,
             backgroundColor: ['rgba(95, 46, 134, 1)'],
@@ -178,7 +168,7 @@ function updateEmissionsChart(labels, emissions) {
             borderWidth: 2
         }, {
             label: 'City Port',
-            data: emissions[5],
+            data: normalized_emissions[5],
             cubicInterpolationMode: 'monotone',
             tension: 0.4,
             backgroundColor: ['rgba(75, 222, 151, 1)'],
@@ -190,12 +180,20 @@ function updateEmissionsChart(labels, emissions) {
     const data1 = {
         labels: labels,
         datasets: [{
-            label: 'South Canal',
+            label: 'Emissions',
             data: emissions[0],
             cubicInterpolationMode: 'monotone',
             tension: 0.4,
             backgroundColor: ['rgba(95, 46, 234, 1)'],
             borderColor: ['rgba(95, 46, 234, 1)'],
+            borderWidth: 2
+        },{
+            label: 'Avg. Travel Time (s)',
+            data: traffic[0],
+            cubicInterpolationMode: 'monotone',
+            tension: 0.4,
+            backgroundColor: ['rgba(245, 230, 40, 1)'],
+            borderColor: ['rgba(245, 230, 40, 1)'],
             borderWidth: 2
         }]
     };
@@ -203,12 +201,20 @@ function updateEmissionsChart(labels, emissions) {
     const data2 = {
         labels: labels,
         datasets: [{
-            label: 'The Liberties',
+            label: 'Emissions',
             data: emissions[1],
             cubicInterpolationMode: 'monotone',
             tension: 0.4,
-            backgroundColor: ['rgb(227,234,130, 1)'],
-            borderColor: ['rgba(227,234,130, 1)'],
+            backgroundColor: ['rgba(95, 46, 234, 1)'],
+            borderColor: ['rgba(95, 46, 234, 1)'],
+            borderWidth: 2
+        },{
+            label: 'Avg. Travel Time (s)',
+            data: traffic[1],
+            cubicInterpolationMode: 'monotone',
+            tension: 0.4,
+            backgroundColor: ['rgba(245, 230, 40, 1)'],
+            borderColor: ['rgba(245, 230, 40, 1)'],
             borderWidth: 2
         }]
     };
@@ -216,12 +222,20 @@ function updateEmissionsChart(labels, emissions) {
     const data3 = {
         labels: labels,
         datasets: [{
-            label: 'Dublin Heuston',
+            label: 'Emissions',
             data: emissions[2],
             cubicInterpolationMode: 'monotone',
             tension: 0.4,
-            backgroundColor: ['rgba(95, 146, 234, 1)'],
-            borderColor: ['rgba(95, 146, 234, 1)'],
+            backgroundColor: ['rgba(95, 46, 234, 1)'],
+            borderColor: ['rgba(95, 46, 234, 1)'],
+            borderWidth: 2
+        },{
+            label: 'Avg. Travel Time (s)',
+            data: traffic[2],
+            cubicInterpolationMode: 'monotone',
+            tension: 0.4,
+            backgroundColor: ['rgba(245, 230, 40, 1)'],
+            borderColor: ['rgba(245, 230, 40, 1)'],
             borderWidth: 2
         }]
     };
@@ -229,12 +243,20 @@ function updateEmissionsChart(labels, emissions) {
     const data4 = {
         labels: labels,
         datasets: [{
-            label: 'Tech. University',
+            label: 'Emissions',
             data: emissions[3],
             cubicInterpolationMode: 'monotone',
             tension: 0.4,
-            backgroundColor: ['rgb(234,35,53, 1)'],
-            borderColor: ['rgba(234,35,53, 1)'],
+            backgroundColor: ['rgba(95, 46, 234, 1)'],
+            borderColor: ['rgba(95, 46, 234, 1)'],
+            borderWidth: 2
+        },{
+            label: 'Avg. Travel Time (s)',
+            data: traffic[3],
+            cubicInterpolationMode: 'monotone',
+            tension: 0.4,
+            backgroundColor: ['rgba(245, 230, 40, 1)'],
+            borderColor: ['rgba(245, 230, 40, 1)'],
             borderWidth: 2
         }]
     };
@@ -242,12 +264,20 @@ function updateEmissionsChart(labels, emissions) {
     const data5 = {
         labels: labels,
         datasets: [{
-            label: 'North City Center',
+            label: 'Emissions',
             data: emissions[4],
             cubicInterpolationMode: 'monotone',
             tension: 0.4,
-            backgroundColor: ['rgba(95, 46, 134, 1)'],
-            borderColor: ['rgba(95, 46, 134, 1)'],
+            backgroundColor: ['rgba(95, 46, 234, 1)'],
+            borderColor: ['rgba(95, 46, 234, 1)'],
+            borderWidth: 2
+        },{
+            label: 'Avg. Travel Time (s)',
+            data: traffic[4],
+            cubicInterpolationMode: 'monotone',
+            tension: 0.4,
+            backgroundColor: ['rgba(245, 230, 40, 1)'],
+            borderColor: ['rgba(245, 230, 40, 1)'],
             borderWidth: 2
         }]
     };
@@ -255,12 +285,20 @@ function updateEmissionsChart(labels, emissions) {
     const data6 = {
         labels: labels,
         datasets: [{
-            label: 'City Port',
+            label: 'Emissions',
             data: emissions[5],
             cubicInterpolationMode: 'monotone',
             tension: 0.4,
-            backgroundColor: ['rgba(75, 222, 151, 1)'],
-            borderColor: ['rgba(75, 222, 151, 1)'],
+            backgroundColor: ['rgba(95, 46, 234, 1)'],
+            borderColor: ['rgba(95, 46, 234, 1)'],
+            borderWidth: 2
+        },{
+            label: 'Avg. Travel Time (s)',
+            data: traffic[5],
+            cubicInterpolationMode: 'monotone',
+            tension: 0.4,
+            backgroundColor: ['rgba(245, 230, 40, 1)'],
+            borderColor: ['rgba(245, 230, 40, 1)'],
             borderWidth: 2
         }]
     };
@@ -283,7 +321,6 @@ function updateEmissionsChart(labels, emissions) {
 
     const emissions1ChartCtx = document.getElementById('dashboard-emissions-1-chart');
     if (emissions1ChartCtx) {
-        console.log('I EXIST');
         const emissions1Canvas = emissions1ChartCtx.getContext('2d');
         const emissions1Chart = new Chart(emissions1Canvas, {
             type: "line",
@@ -386,46 +423,87 @@ async function updateAllEmissionValues() {
     const two_months_from_then = new Date(one_day_from_now.getTime() - 62 * 24 * 60 * 60 * 1000);
 
     const chart_emissions = [];
-    const chart_labels = {};
-
+    const chart_emissions_normalized = [];
+    const chart_emissions_labels = {};
+    const chart_traffic = [];
     let this_month_total_emissions = 0;
     let previous_month_total_emissions = 0;
 
     for (let area = 1; area <= 6; area++) {
-        const response = await fetch(apiUrl + 'emissions/' + area);
-        const data = await response.json();
+        const emissionsResponse = await fetch(apiUrl + 'emissions/' + area);
+        const emissionsData = await emissionsResponse.json();
 
-        if (data.length > 0) {
-            updateLastEmissionValue(area, data[0].no2_level);
+        const trafficResponse = await fetch(apiUrl + 'traffic/' + area);
+        const trafficData = await trafficResponse.json();
+
+        if (emissionsData.length > 0) {
+            updateLastEmissionValue(area, emissionsData[0].no2_level);
         } else {
             updateLastEmissionValue(area, undefined);
         }
 
         const chart_emissions_local = [];
+        const chart_emissions_normalized_local = [];
+        const chart_traffic_local = [];
 
-        for (var i = 0; i < data.length; i++) {
-            var entry_date = new Date(data[i].timestamp);
-            var corrected_entry_date = new Date(entry_date.getTime() + 24 * 60 * 60 * 1000);;
-            if (entry_date < one_day_from_now) {
-                if (entry_date > one_week_from_then) {
-                    chart_emissions_local.push({x: corrected_entry_date.toISOString().substring(5, 16), y: data[i].no2_level});
-                    this_month_total_emissions += data[i].no2_level;
-                    chart_labels[corrected_entry_date.toISOString().substring(5, 16)] = 1;
-                } else if (entry_date > one_month_from_then) {
-                    this_month_total_emissions += data[i].no2_level;
-                } else if (entry_date > two_months_from_then) {
-                    previous_month_total_emissions += data[i].no2_level;
-                } else {
-                    break;
-                }
+        for (let i = 0; i < emissionsData.length; i++) {
+            const entry_date = new Date(emissionsData[i].timestamp);
+
+            if (entry_date > one_week_from_then) {;
+                chart_emissions_local.push(
+                    {x: entry_date, y: emissionsData[i].no2_level}
+                );
+                chart_emissions_normalized_local.push(
+                    {x: entry_date.toISOString().substring(5, 16), y: emissionsData[i].no2_level}
+                );
+                this_month_total_emissions += emissionsData[i].no2_level;
+                chart_emissions_labels[entry_date.toISOString().substring(5, 16)] = 1;
+            } else if (entry_date > one_month_from_then) {
+                this_month_total_emissions += emissionsData[i].no2_level;
+            } else if (entry_date > two_months_from_then) {
+                previous_month_total_emissions += emissionsData[i].no2_level;
+            } else {
+                break;
+            }
+        }
+
+        const averaged_traffic = {};
+        for (let i = 0; i < trafficData.length; i++) {
+            const entry_date = new Date(trafficData[i].timestamp);
+            entry_date.setMinutes(0);
+            entry_date.setSeconds(0);
+
+            if (entry_date in averaged_traffic) {
+                averaged_traffic[entry_date][0] += trafficData[i].current_travel_time;
+                averaged_traffic[entry_date][1] += 1
+            } else {
+                averaged_traffic[entry_date] = [trafficData[i].current_travel_time, 1]
+            }
+        }
+
+        for (let i = 0; i < Object.keys(averaged_traffic).length; i++) {
+            const key = Object.keys(averaged_traffic)[i];
+            const entry_date = new Date(key);
+
+            if (entry_date > one_week_from_then) {
+                chart_traffic_local.push(
+                    {
+                        x: new Date(key).toISOString().substring(5, 16),
+                        y: averaged_traffic[key][0] / averaged_traffic[key][1]
+                    }
+                );
+            } else {
+                break;
             }
         }
 
         chart_emissions.push(chart_emissions_local);
+        chart_traffic.push(chart_traffic_local);
+        chart_emissions_normalized.push(chart_emissions_normalized_local);
     }
 
     updateTotalEmissions(this_month_total_emissions, previous_month_total_emissions);
-    updateEmissionsChart(Object.keys(chart_labels).sort(), chart_emissions);
+    updateEmissionsChart(Object.keys(chart_emissions_labels).sort(), chart_emissions_normalized, chart_emissions, chart_traffic);
 }
 
 async function updateDataPointsAvailable() {
