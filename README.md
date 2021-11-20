@@ -1,3 +1,6 @@
+[![License](https://img.shields.io/github/license/msolefonte/dublin-pollution-visualizer)](https://github.com/msolefonte/dublin-pollution-visualizer/blob/main/LICENSE)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/msolefonte/dublin-pollution-visualizer/CONTRIBUTING.md)
+
 # Dublin NO<sub>2</sub> Pollution Visualizer
 
 Open Source application that allows visualization real-time data about traffic and Nitrogen Dioxide pollution around Dublin, Ireland. To be used together with Dublin Pollution Piper.
